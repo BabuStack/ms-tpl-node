@@ -1,18 +1,6 @@
 import {Middleware} from "koa";
 import ICtxState from "~/interfaces/ctxState";
-import {getLogger, getFormatter, getLoggerOptions} from '~/lib/logger'
-import getModuleLogger from '~/lib/logger/module';
-
-const reqLogger = getModuleLogger('<--')
-
-const apiLogger = getLogger({
-  ...getLoggerOptions(),
-  formatter: getFormatter(
-    (tokens: any) => `${tokens.reqIP}`
-  )
-});
-
-const resLogger = getModuleLogger('-->')
+import {reqLogger, resLogger, apiLogger} from '~/lib/logger'
 
 /**
  * Logs every request

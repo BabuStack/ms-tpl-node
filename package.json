@@ -1,6 +1,6 @@
 {
   "name": "ms-tpl-node",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Micro Service template for NodeJS in Typescript",
   "main": "dist/src/server.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "lint": "eslint src/ --fix --ext .ts",
     "coverage": "npm t -- --coverage",
     "commit": "git-cz",
-    "health-check": "node dist/scripts/healthCheck.js"
+    "health-check": "node dist/scripts/healthCheck.js",
+    "production": "node dist/server.js"
   },
   "repository": {
     "type": "git",

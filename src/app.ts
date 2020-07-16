@@ -11,6 +11,8 @@ import router from "./router";
 const app = new Koa();
 
 
+// For health check calls from docker
+app.use(PingResponder());
 
 // Append request id to every request
 // if one wasn't present in x-request-id header
@@ -27,9 +29,6 @@ app.use(bodyParser())
 // Logs every request
 app.use(RequestLogger());
 
-
-// For health check calls from docker
-app.use(PingResponder());
 
 // Main Application routes
 app.use(router.routes()).use(router.allowedMethods());

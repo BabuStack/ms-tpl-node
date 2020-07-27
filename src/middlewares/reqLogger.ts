@@ -14,7 +14,7 @@ export default function RequestLogger(): Middleware<ICtxState> {
     await next();
     
     const duration = Date.now() - start;
-    apiLogger.info(`${ctx.method} ${ctx.URL} - ${duration}ms`)
+    apiLogger.info(`${ctx.method} ${ctx.URL} ${ctx.status} - ${duration}ms`)
     resLogger.info(ctx.status);
     resLogger.info(ctx.response.header);
     resLogger.info(ctx.body);
